@@ -13,15 +13,15 @@ app.use(express.static('static'));
 app.set('view engine', 'ejs');
 
 
-//  route principale qui affichera le nom et le prenom sur la page index via ejs
+//  route principale qui execute la fonction qui genere l'affichage
 app.get('/', function (req, res) {
     name(res);  
 });
 
 /**
- * fonction qui retoune le nom et prenom en parametre
- * @param {string} first 
- * @param {string} last 
+ * Fonction qui retoune le prenom sur la page index
+ * @param {*} res 
+ * @param {String} first 
  */
 function name(res,first="Jean-Fred") {
     res.render('index', {
