@@ -15,9 +15,7 @@ app.set('view engine', 'ejs');
 
 //  route principale qui affichera le nom et le prenom sur la page index via ejs
 app.get('/', function (req, res) {
-    res.render('index', {
-        name: name("Jean-fred")
-    });
+    name(res);  
 });
 
 /**
@@ -25,8 +23,10 @@ app.get('/', function (req, res) {
  * @param {string} first 
  * @param {string} last 
  */
-function name(first= "luke") {
-    return first ;
+function name(res,first="Jean-Fred") {
+    res.render('index', {
+        name: first
+    });
 }
 
 
